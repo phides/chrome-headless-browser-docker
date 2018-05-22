@@ -72,6 +72,8 @@ USER headless
 # https://github.com/SeleniumHQ/docker-selenium/issues/87
 ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
 
+ENV CHROME_ARGUMENTS "--window-size=1920,1080"
+
 ENTRYPOINT ["/usr/bin/dumb-init","--","java","-jar","/opt/selenium/selenium-server-standalone.jar"]
 
 EXPOSE 4444
