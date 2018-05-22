@@ -65,7 +65,7 @@ Try adding the following flag: `--enable-logging --v=10000`
 
 Standalone mode:
 ```
-docker run -it --name chrome-headless --shm-size=1024m --cap-add=SYS_ADMIN \
+docker run -it --name chrome-headless-standalone --shm-size=1024m --cap-add=SYS_ADMIN \
   -p=127.0.0.1:4444:4444 \
   phide/chrome-headless-browser-selenium
 ```
@@ -78,10 +78,7 @@ docker run -it --rm --name hub \
   selenium/hub
 
 # Then run your node by registering it to the hub
-docker run -it --name node-chrome-headless --link hub:hub --cap-add=SYS_ADMIN \
-  phide/chrome-headless-browser-selenium \
-  -role node -hub http://hub:4444/grid/register \
-  -nodeConfig /opt/selenium/config.json
+docker run -it --name node-chrome-headless --link hub:hub --cap-add=SYS_ADMIN  phide/chrome-headless-browser-docker -role node -hub http://hub:4444/grid/register -nodeConfig /opt/selenium/config.json
 ```
 
 ## Headless Shell
