@@ -1,4 +1,4 @@
-FROM yukinying/chrome-headless-browser:latest
+FROM phide/chrome-headless-browser:latest
 
 MAINTAINER Albert Yu <yukinying@gmail.com>
 
