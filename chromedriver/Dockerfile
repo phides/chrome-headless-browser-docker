@@ -1,4 +1,5 @@
-FROM phide/chrome-headless-browser:latest
+#FROM phide/chrome-headless-browser:latest
+FROM justinribeiro/chrome-headless
 
 MAINTAINER Albert Yu <yukinying@gmail.com>
 
@@ -67,7 +68,8 @@ RUN chmod +x /opt/google/chrome/google-chrome
 
 RUN chown -R headless:headless /opt/selenium
 
-USER headless
+#USER headless
+USER chrome
 # Following line fixes
 # https://github.com/SeleniumHQ/docker-selenium/issues/87
 ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
